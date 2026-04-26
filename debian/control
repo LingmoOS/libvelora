@@ -107,7 +107,7 @@ Provides: libplasma6,
 Description: Lingmo OS Runtime components
  Lingmo OS library and runtime components based upon KF6 and Qt 6.
 
-Package:  libplasma6
+Package:  libplasma7
 Architecture: any
 Depends: libvelora,
          ${misc:Depends},
