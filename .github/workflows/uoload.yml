@@ -44,6 +44,6 @@ jobs:
           obs-package-name: 'libvelora'
           obs-project-name: 'home:LingmoOS:libvelora'
           obs-user-name: ${{ secrets.OBS_USERNAME }}
-          obs-password: ${{ secrets.OBS_PASSWORD }}
+          obs-password: ${{ secrets.OBS_TOKEN }}
           obs-instance-url: 'https://api.opensuse.org'
           local-package-dir: './src-tar-output'
