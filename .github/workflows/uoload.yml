@@ -12,9 +12,9 @@ on:
 
 jobs:
   debian:
-    name: Debian Trixie
+    name: Debian Testing
     runs-on: ubuntu-latest
-    container: docker.io/library/debian:trixie
+    container: docker.io/library/debian:testing
     steps:
       - name: Install Dependencies
         run: |
