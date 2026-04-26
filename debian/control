@@ -102,8 +102,8 @@ Architecture: any
 Multi-Arch: same
 Depends: ${misc:Depends},
          ${shlibs:Depends},
-Replaces: libplasma6,
-Provides: libplasma6,
+Replaces: libplasma7,
+Provides: libplasma7,
 Description: Lingmo OS Runtime components
  Lingmo OS library and runtime components based upon KF6 and Qt 6.
 
@@ -118,12 +118,12 @@ Architecture: any
 Multi-Arch: same
 Depends: ${misc:Depends},
          ${shlibs:Depends},
-Replaces: libplasmaquick6,
-Provides: libplasmaquick6,
+Replaces: libplasmaquick7,
+Provides: libplasmaquick7,
 Description: Lingmo OS Runtime components
  Lingmo OS library and runtime components based upon KF6 and Qt 6.
 
-Package:  libplasmaquick6
+Package:  libplasmaquick7
 Architecture: any
 Depends: libveloraquick,
          ${misc:Depends},
