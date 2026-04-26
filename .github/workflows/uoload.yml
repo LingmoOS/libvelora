@@ -1,0 +1,46 @@
+name: Build
+
+permissions: write-all
+
+on:
+  push:
+    branches: [ main ]
+    tags:
+      - "v*.*.*"
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  debian:
+    name: Debian Trixie
+    runs-on: ubuntu-latest
+    container: docker.io/library/debian:trixie
+    steps:
+      - name: Install Dependencies
+        run: |
+          apt-get update
+          apt-get install -y sudo git ca-certificates
+          apt-get install -y equivs curl git devscripts debhelper lintian build-essential automake autotools-dev cmake g++
+      
+      - name: Checkout Source
+        uses: actions/checkout@v4
+
+      - name: Build source package
+        run: |
+          dpkg-buildpackage -S -us -uc
+      
+      - name: Collect files
+        run: |
+          mkdir -p src-tar-output
+          mv ../*.dsc ../*.tar.* src-tar-output/
+
+      - name: Upload
+        uses: LingmoOS/action-upload-to-obs@0.0.4
+        with:
+          remove-old-sources: true
+          obs-package-name: 'libvelora'
+          obs-project-name: 'home:LingmoOS:libvelora'
+          obs-user-name: ${{ secrets.OBS_USERNAME }}
+          obs-password: ${{ secrets.OBS_PASSWORD }}
+          obs-instance-url: 'https://api.opensuse.org'
+          local-package-dir: './src-tar-output'
