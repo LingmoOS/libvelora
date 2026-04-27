@@ -1,4 +1,4 @@
-# SymbolsHelper-Confirmed: 6.4.91 amd64 armel armhf i386 powerpc x32
+# SymbolsHelper-Confirmed: 5:7.0.0 amd64 armel armhf i386 powerpc x32
 libPlasmaQuick.so.6 libplasmaquick7 #MINVER#
 * Build-Depends-Package: libplasma-dev
  _ZGVZN9QMetaType21registerConverterImplI5QListIP7QActionE9QIterableI13QMetaSequenceEEEbSt8functionIFbPKvPvEES_S_E10unregister@Base 6.1.0
